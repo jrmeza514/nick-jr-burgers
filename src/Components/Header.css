@@ -1,0 +1,29 @@
+.header {
+    background-color: red;
+    height: 10rem;
+    width: 100vw;
+    overflow-y: hidden;
+}
+
+.header .devil {
+    height: inherit;
+    width: 300px;
+    display: inline-block;
+    position: relative;
+    background-image:url('../map_bg.png');
+    background-position-y: 45px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+
+.header .logo {
+    display: inline-block;
+    height: inherit;
+    width: 250px;
+    background-image: url('../logo_side.png');
+    background-size: 65%;
+    background-position-y: 45px;
+    background-position-x: 35px;
+    background-repeat: no-repeat;
+}

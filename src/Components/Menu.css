@@ -1,0 +1,101 @@
+.menuContainer {
+    display: block;
+    box-sizing: border-box;
+    padding: 0 0.8rem;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+.menuContainer .category {
+    width: 100%;
+}
+
+ 
+
+.menuContainer .deluxeBurgers {
+    display: block;
+}
+.menuContainer .deluxeBurgers .deluxeBurger {
+    width: 50%;
+    box-sizing: border-box;
+    display: inline-block;
+}
+.menuContainer .deluxeBurgers .deluxeBurger:nth-child(odd) {
+    padding-left: 50px;
+}
+
+@media screen and (max-width: 730px) {
+    .menuContainer .deluxeBurgers .deluxeBurger {
+        width: 100%;
+    }
+    .menuContainer .deluxeBurgers .deluxeBurger:nth-child(odd) {
+        padding-left: 0px;
+    }
+    .menuContainer {
+        font-size: 0.8em;
+    }
+}
+
+
+.deluxeBurger {
+    padding: 10px 0px;
+}
+
+.basicBurgers {
+    padding: 2rem 0px;
+}
+.menuContainer .menuItem {
+    font-size: 1.1em;
+}
+.menuContainer .inline-wrapper {
+    display: flex;
+    height: 2rem;
+    align-items: baseline;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+
+.menuContainer .menuItem .inline-wrapper * {
+    height: 100%;
+}
+.menuContainer .menuItem .inline-wrapper .name-and-icon {
+    display: flex;
+    align-items: center;
+}
+
+.menuContainer .basicBurger.menuItem .inline-wrapper * {
+    flex: 2;
+}
+
+.menuContainer .basicBurger.menuItem .inline-wrapper .name {
+    flex: 3;
+}
+.menuContainer .basicBurger.menuItem .inline-wrapper .price {
+    flex: 2;
+    text-align: right;
+}
+
+.heat-icon {
+    width: 100px;
+    background-image: none;
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position-y: -6px;
+    background-image: url('../pepper-icon-jpg.jpeg');
+
+}
+
+.heat-icon-0 {
+    background-image: none;
+    background-repeat: repeat-x;
+}
+
+.heat-icon-1 {
+    background-repeat: no-repeat;
+}
+
+.heat-icon-2 {
+    width: 66px;
+}
