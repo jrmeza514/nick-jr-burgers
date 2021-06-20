@@ -1,5 +1,5 @@
-import { Component } from "react";
 import './Header.css';
+import {Link} from 'react-router-dom';
 
 interface Props {
     
@@ -10,6 +10,8 @@ const Header = (props: Props) => {
         <header className='header'>
             <div className="logo"></div>
             <div className="devil"></div>
+
+            <Link to="/menu">See Our Menu</Link>
         </header>
     )
 }

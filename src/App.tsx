@@ -3,6 +3,12 @@ import Header from './Components/Header';
 import Menu from './Components/Menu';
 import { Timeline } from 'react-twitter-widgets';
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 const showTwitterFeed = false;
 const twitterFeed = (<Timeline
   dataSource={{
@@ -17,9 +23,17 @@ const twitterFeed = (<Timeline
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Menu></Menu>
-      { showTwitterFeed ? twitterFeed : null}
+      <Router>
+        <Header></Header>
+        <Switch>
+          <Route path="/menu">
+            <Menu></Menu>
+          </Route>
+
+        </Switch>
+        
+        { showTwitterFeed ? twitterFeed : null}
+      </Router>
     </div>
   );
 }
