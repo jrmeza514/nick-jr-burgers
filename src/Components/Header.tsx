@@ -23,7 +23,7 @@ const Header = (props: Props) => {
 
 
     return (
-        <Navbar color="danger" dark expand="md" sticky="top">
+        <Navbar color="dark" dark expand="md" sticky="top">
             <NavbarBrand href="/">
                 <div className="logo"></div>
             </NavbarBrand>
@@ -32,9 +32,6 @@ const Header = (props: Props) => {
             <Nav className="mr-auto" navbar fill >
                 <NavItem color="dark">
                     <NavLink href="/menu" active >Menu</NavLink>
-                </NavItem>
-                <NavItem color="dark">
-                    <NavLink href="/menu" active>Menu</NavLink>
                 </NavItem>
             </Nav>
             </Collapse>
