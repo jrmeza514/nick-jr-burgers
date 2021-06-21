@@ -1,19 +1,20 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import menuItems, { DeluxeBurger, BasicBurger } from "../Menu/menuItems";
 import './Menu.css';
+import {v4 as uuid} from 'uuid';
 
 const comboOptions = [
     {
         desc: "With regular fries and fountain drink",
-        addedCost: <text>Add &nbsp;&#36; 3.29</text>
+        addedCost: <p>Add &nbsp;&#36; 3.29</p>
     },
     {
         desc: "With large fries and fountain drink",
-        addedCost: <text>Add &nbsp;&#36; 4.29</text>
+        addedCost: <p>Add &nbsp;&#36; 4.29</p>
     },
     {
         desc: "Substitue sweet potato fries or onion rings",
-        addedCost: <text>Add &nbsp;&#36; 1.69</text>
+        addedCost: <p>Add &nbsp;&#36; 1.69</p>
     }
 ];
 
@@ -22,7 +23,7 @@ class Burgers extends Component {
     deluxeBurgers = menuItems.deluxeBurgers.map( (burger: DeluxeBurger) => {
         const {name, desc, price, heatIndex} = burger;
        return (
-        <div className="deluxeBurger menuItem">
+        <div className="deluxeBurger menuItem" key={uuid()}>
             <div className="inline-wrapper">
                 <div className="name-and-icon">
                     <div className="name">{name}</div>
@@ -36,9 +37,9 @@ class Burgers extends Component {
     });
 
     basicBurgers = menuItems.basicBurgers.map( (burger: BasicBurger) => {
-        const {name, desc, price, doublePrice} = burger;
+        const {name, price, doublePrice} = burger;
        return (
-        <div className="basicBurger menuItem">
+        <div className="basicBurger menuItem" key={uuid()}>
             <div className="inline-wrapper">
                 <div className="name">{name}</div>
                 <div className="price">	Single &nbsp;&nbsp;&nbsp;&#36;{price}</div>
@@ -51,7 +52,7 @@ class Burgers extends Component {
     combos = comboOptions.map(option => {
         const {desc, addedCost} = option;
         return (
-            <div className="menuItem inline-wrapper">
+            <div className="menuItem inline-wrapper" key={uuid()}>
                 <div className="title">{desc}</div>
                 <div className="price">{addedCost}</div>
             </div>
@@ -62,16 +63,16 @@ class Burgers extends Component {
         return (
             <>
                 <div className="deluxeBurgers category">
-                    <h3>Deluxe Burgers</h3>
+                    <div className="section-title">Deluxe Burgers</div>
                     {this.deluxeBurgers}
                 </div>
                 <div className="basic-combo-wrapper">
                     <div className="basicBurgers category">
-                        <h3>Basic Burgers</h3>
+                    <div className="section-title">Basic Burgers</div>
                         {this.basicBurgers}
                     </div>
-                    <div className="combos category">
-                        <h3>Combos</h3>
+                    <div className="combos pcategory">
+                        <div className="section-title">Combos</div>
                         {this.combos}
                     </div>                    
                 </div>

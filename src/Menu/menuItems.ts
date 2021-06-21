@@ -38,8 +38,7 @@ export class BasicBurger extends MenuItem {
 const Hamburger = new BasicBurger("Hamburger", 2.79, 4.49);
 const CheeseBurger = new BasicBurger("Cheeseburger", 3.99, 4.99);
 const BaconCheeseBurger = new BasicBurger("Bacon Cheeseburger", 5.29, 6.49);
-
-export default {
+const menu = {
     deluxeBurgers: deluxeBurgers.map((item:DeluxeBurger) => item ),
     basicBurgers: [
         Hamburger,
@@ -48,3 +47,5 @@ export default {
     ],
     gyros: gyros.map( (item: MenuItem) => item)
 };
+
+export default menu;

@@ -1,29 +1,15 @@
-.header {
-    background-color: red;
-    height: 10rem;
-    width: 100vw;
-    overflow-y: hidden;
-}
-
-.header .devil {
-    height: inherit;
-    width: 300px;
+.logo {
     display: inline-block;
-    position: relative;
-    background-image:url('../map_bg.png');
-    background-position-y: 45px;
-    background-size: 100%;
-    background-repeat: no-repeat;
-
-}
-
-.header .logo {
-    display: inline-block;
-    height: inherit;
-    width: 250px;
+    height: 60px;
+    width: 150px;
     background-image: url('../logo_side.png');
-    background-size: 65%;
-    background-position-y: 45px;
-    background-position-x: 35px;
+    background-size: 65% ;
+    background-position-y: 2px;
+    background-position-x: 15px;
     background-repeat: no-repeat;
+}
+
+.App .navbar, .App .navbar-expand-md, .App .navbar-brand{
+    padding-top: 0;
+    padding-bottom: 0;
 }

@@ -1,5 +1,5 @@
-import './Header.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './Header.css';
 import {
     Navbar,
     NavbarToggler,
@@ -7,13 +7,13 @@ import {
     Collapse,
     Nav,
     NavItem,
-    NavLink,
-    NavbarText
+    NavLink
 } from 'reactstrap';
 import { useState } from 'react';
 
 
 interface Props {
+
 }
 
 const Header = (props: Props) => {
@@ -25,13 +25,16 @@ const Header = (props: Props) => {
     return (
         <Navbar color="danger" dark expand="md" sticky="top">
             <NavbarBrand href="/">
-                Nick Jr's Burgers
+                <div className="logo"></div>
             </NavbarBrand>
             <NavbarToggler onClick={toggle} />
             <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+            <Nav className="mr-auto" navbar fill >
                 <NavItem color="dark">
-                    <NavLink href="/menu">Menu</NavLink>
+                    <NavLink href="/menu" active >Menu</NavLink>
+                </NavItem>
+                <NavItem color="dark">
+                    <NavLink href="/menu" active>Menu</NavLink>
                 </NavItem>
             </Nav>
             </Collapse>

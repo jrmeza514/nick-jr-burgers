@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import menuItems, { DeluxeBurger, MenuItem } from "../Menu/menuItems";
+import { Component } from "react";
+import menuItems, {  MenuItem } from "../Menu/menuItems";
 import './Menu.css';
 
 class Gyros extends Component {
@@ -24,7 +24,7 @@ class Gyros extends Component {
         return (
             <>
                 <div className="gyros category">
-                    <h3>Deluxe Burgers</h3>
+                    <div className="section-title">Deluxe Burgers</div>
                     {this.gyros}
                 </div>
             </>

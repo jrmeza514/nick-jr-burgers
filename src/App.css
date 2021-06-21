@@ -6,3 +6,38 @@ body {
   height: 600px;
   width: 600px;  
 }
+
+.devil {
+  display: block;
+  position: relative;
+  margin: auto;
+  margin-top: 2rem;
+  height: 680px;
+  width: 500px;
+  max-width: 100vw;
+  background-image:url('./map_bg.png');
+  background-position-y: 0px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  
+
+}
+
+.devil :first-child {
+  position: relative; 
+  top: 99px;
+  left: 2px;
+  width: 96%;
+}
+
+
+@media screen and (max-width: 500px) {
+  .devil :first-child {
+    top: calc(100vw / 5);
+  }
+
+  .devil :first-child .twitter-timeline.twitter-timeline-rendered {
+    height: 65vw !important;
+  }
+  
+}
