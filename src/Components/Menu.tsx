@@ -1,81 +1,91 @@
 import React, { Component } from "react";
-import menuItems, { DeluxeBurger, BasicBurger } from "../Menu/menuItems";
-import './Menu.css';
+import Burgers from "./Burgers";
+import Gyros from "./Gyros";
+import PropTypes from 'prop-types';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
-const comboOptions = [
-    {
-        desc: "With regular fries and fountain drink",
-        addedCost: <text>Add &nbsp;&#36; 3.29</text>
-    },
-    {
-        desc: "With large fries and fountain drink",
-        addedCost: <text>Add &nbsp;&#36; 4.29</text>
-    },
-    {
-        desc: "Substitue sweet potato fries or onion rings",
-        addedCost: <text>Add &nbsp;&#36; 1.69</text>
-    }
-];
+const  TabPanel = (props: any) => {
+    const { children, value, index, ...other } = props;
 
-class Menu extends Component {
+    const propTypes = {
+        children: PropTypes.node,
+        index: PropTypes.any.isRequired,
+        value: PropTypes.any.isRequired
+    };
+
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+            <Box p={3}>
+                <Typography>{children}</Typography>
+            </Box>
+            )}
+        </div>
+        );
     
-    deluxeBurgers = menuItems.deluxeBurgers.map( (burger: DeluxeBurger) => {
-        const {name, desc, price, heatIndex} = burger;
-       return (
-        <div className="deluxeBurger menuItem">
-            <div className="inline-wrapper">
-                <div className="name-and-icon">
-                    <div className="name">{name}</div>
-                    <div className={`heat-icon heat-icon-${heatIndex}`}/>
-                </div>
-                <div className="price">	&#36;{price}</div>
-            </div>
-            <div className="desc">{desc}</div>
-        </div>
-       )
-    });
 
-    basicBurgers = menuItems.basicBurgers.map( (burger: BasicBurger) => {
-        const {name, desc, price, doublePrice} = burger;
-       return (
-        <div className="basicBurger menuItem">
-            <div className="inline-wrapper">
-                <div className="name">{name}</div>
-                <div className="price">	Single &nbsp;&nbsp;&nbsp;&#36;{price}</div>
-                <div className="price">	Double &nbsp;&nbsp;&nbsp;&#36;{doublePrice}</div>
-            </div>
-        </div>
-       )
-    });
+}
 
-    combos = comboOptions.map(option => {
-        const {desc, addedCost} = option;
-        return (
-            <div className="menuItem inline-wrapper">
-                <div className="title">{desc}</div>
-                <div className="price">{addedCost}</div>
-            </div>
-        )
-    });
-
-    render(){
-        return (
-            <div className="menuContainer">
-                <div className="deluxeBurgers category">
-                    <h3>Deluxe Burgers</h3>
-                    {this.deluxeBurgers}
-                </div>
-                <div className="basicBurgers category">
-                    <h3>Basic Burgers</h3>
-                    {this.basicBurgers}
-                </div>
-                <div className="combos category">
-                    <h3>Combos</h3>
-                    {this.combos}
-                </div>
-            </div>
-        )
+function a11yProps(index: number) {
+    return {
+      id: `simple-tab-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`
+    };
+  }
+  
+const useStyles = makeStyles((theme) => ({
+    root: {
+        flexGrow: 1,
+        backgroundColor: theme.palette.background.paper
     }
+}));
+  
+
+function Menu(props: any) {
+
+    const classes = useStyles();
+    const [value, setValue] = React.useState(0);
+
+    const handleChange = (event: any, newValue:number) => {
+        setValue(newValue);
+    };
+    
+    return (
+        <>
+        <AppBar position="static">
+            <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+            <Tab label="Burgers" {...a11yProps(0)} />
+            <Tab label="Gyros" {...a11yProps(1)} />
+            <Tab label="Sides and Drinks" {...a11yProps(2)} />
+            </Tabs>
+        </AppBar>
+        <div className="menuContainer">
+            
+            <TabPanel value={value} index={0}>
+               <Burgers></Burgers>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+                <Gyros></Gyros>
+            </TabPanel>
+            <TabPanel value={value} index={2}>
+                Item Three
+            </TabPanel>
+        </div>
+        </>
+    )
+    
 }
 
 export default Menu;

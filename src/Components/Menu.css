@@ -1,11 +1,9 @@
 .menuContainer {
     display: block;
     box-sizing: border-box;
-    padding: 0 0.8rem;
     width: 100%;
-    max-width: 1000px;
     margin: auto;
-    margin-top: 2rem;
+    max-width: 1500px;
   }
 
 .menuContainer .category {
@@ -25,17 +23,6 @@
     padding-left: 50px;
 }
 
-@media screen and (max-width: 730px) {
-    .menuContainer .deluxeBurgers .deluxeBurger {
-        width: 100%;
-    }
-    .menuContainer .deluxeBurgers .deluxeBurger:nth-child(odd) {
-        padding-left: 0px;
-    }
-    .menuContainer {
-        font-size: 0.8em;
-    }
-}
 
 
 .deluxeBurger {
@@ -98,4 +85,50 @@
 
 .heat-icon-2 {
     width: 66px;
+}
+
+@media screen and (max-width: 730px) {
+    .menuContainer .deluxeBurgers .deluxeBurger {
+        width: 100%;
+    }
+    .menuContainer .deluxeBurgers .deluxeBurger:nth-child(odd) {
+        padding-left: 0px;
+    }
+    .menuContainer .basic-combo-wrapper .menuItem{
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .menuContainer .deluxeBurgers .deluxeBurger {
+        width: 33%;
+    }
+    .menuContainer .deluxeBurgers .deluxeBurger:nth-child(odd) {
+        padding-left: 0px;
+    }
+    .menuContainer .deluxeBurgers .deluxeBurger:nth-child(3n+3) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .menuContainer .deluxeBurgers .deluxeBurger:nth-child(3n+1) {
+        padding-left: 25px;
+    }
+    .menuContainer .deluxeBurgers .deluxeBurger:nth-child(3n+2) {
+        padding-right: 25px;
+    }
+    .menuContainer .menuItem {
+        font-size: 1.2em;
+    }
+
+    .menuContainer .basic-combo-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    .menuContainer .basicBurgers {
+        width: 500px;
+    }
+    .menuContainer .combos {
+        width: 600px;
+    }
 }

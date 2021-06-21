@@ -1,6 +1,7 @@
-import deluxeBurgers from './deluxeBurgers.json'
+import deluxeBurgers from './deluxeBurgers.json';
+import gyros from './gyros.json';
 
-class MenuItem {    
+export class MenuItem {    
     public name:string;
     public desc:string;
     public price:number;
@@ -44,5 +45,6 @@ export default {
         Hamburger,
         CheeseBurger,
         BaconCheeseBurger
-    ]
+    ],
+    gyros: gyros.map( (item: MenuItem) => item)
 };
