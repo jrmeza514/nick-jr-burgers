@@ -1,5 +1,5 @@
 import { Component } from "react";
-import menuItems, { DeluxeBurger, BasicBurger } from "../Menu/menuItems";
+import menu, { DeluxeBurger, BasicBurger } from "../../Components/Menu/data/menuItems";
 import './Menu.css';
 import {v4 as uuid} from 'uuid';
 
@@ -20,7 +20,7 @@ const comboOptions = [
 
 class Burgers extends Component {
     
-    deluxeBurgers = menuItems.deluxeBurgers.map( (burger: DeluxeBurger) => {
+    deluxeBurgers = menu.deluxeBurgers.map( (burger: DeluxeBurger) => {
         const {name, desc, price, heatIndex} = burger;
        return (
         <div className="deluxeBurger menuItem" key={uuid()}>
@@ -36,7 +36,7 @@ class Burgers extends Component {
        )
     });
 
-    basicBurgers = menuItems.basicBurgers.map( (burger: BasicBurger) => {
+    basicBurgers = menu.basicBurgers.map( (burger: BasicBurger) => {
         const {name, price, doublePrice} = burger;
        return (
         <div className="basicBurger menuItem" key={uuid()}>

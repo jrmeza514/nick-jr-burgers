@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import MenuExtras from "./MenuExtras";
 
 const  TabPanel = (props: any) => {
     const { children, value, index, ...other } = props;
@@ -62,7 +63,7 @@ function Menu(props: any) {
                 <Gyros></Gyros>
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Item Three
+                <MenuExtras></MenuExtras>
             </TabPanel>
         </div>
         </>

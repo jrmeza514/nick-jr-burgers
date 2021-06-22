@@ -1,6 +1,6 @@
 import Header from './Components/Header';
 
-import Menu from './Components/Menu';
+import Menu from './Components/Menu/Menu';
 import { Timeline } from 'react-twitter-widgets';
 import './App.css';
 import {

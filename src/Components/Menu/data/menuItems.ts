@@ -1,5 +1,6 @@
 import deluxeBurgers from './deluxeBurgers.json';
 import gyros from './gyros.json';
+import extras from './extras.json';
 
 export class MenuItem {    
     public name:string;
@@ -39,13 +40,14 @@ const Hamburger = new BasicBurger("Hamburger", 2.79, 4.49);
 const CheeseBurger = new BasicBurger("Cheeseburger", 3.99, 4.99);
 const BaconCheeseBurger = new BasicBurger("Bacon Cheeseburger", 5.29, 6.49);
 const menu = {
-    deluxeBurgers: deluxeBurgers.map((item:DeluxeBurger) => item ),
+    deluxeBurgers: deluxeBurgers,
     basicBurgers: [
         Hamburger,
         CheeseBurger,
         BaconCheeseBurger
     ],
-    gyros: gyros.map( (item: MenuItem) => item)
+    gyros: gyros,
+    extras: extras
 };
 
 export default menu;

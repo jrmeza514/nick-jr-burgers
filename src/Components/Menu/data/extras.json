@@ -1,0 +1,16 @@
+{
+    "Sides": [
+        {
+            "name": "Deluxe Burger",
+            "desc": "Two patties, grilled and seasoned mushrooms and onions, cheddar and swiss cheeses, hickory bacon, avocado, Nick's homemade garlic mayo, tomato and pickles on a sesame bun.",
+            "price": 7.49,
+            "heatIndex": 0
+        }
+    ],
+    "Drinks": [
+        
+    ],
+    "Sauces": [
+        
+    ]
+}

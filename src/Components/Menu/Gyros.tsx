@@ -1,10 +1,10 @@
 import { Component } from "react";
-import menuItems, {  MenuItem } from "../Menu/menuItems";
+import menu, {  MenuItem } from "../../Components/Menu/data/menuItems";
 import './Menu.css';
 
 class Gyros extends Component {
     
-    gyros = menuItems.gyros.map( (gyro: MenuItem) => {
+    gyros = menu.gyros.map( (gyro: MenuItem) => {
         const {name, desc, price} = gyro;
        return (
         <div className="gyro menuItem">
