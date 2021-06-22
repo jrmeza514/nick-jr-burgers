@@ -1,5 +1,6 @@
 import { Component } from "react";
 import menu, { MenuItem } from "./data/menuItems";
+import { v4 as uuid } from 'uuid';
 
 class MenuExtras extends Component {
 
@@ -21,7 +22,7 @@ class MenuExtras extends Component {
     sides = menu.extras.Sides.map( (item: MenuItem) => {
         const {name, desc, price} = item;
        return (
-        <div className="side menuItem">
+        <div className="side menuItem" key={uuid()}>
             <div className="inline-wrapper">
                 <div className="name-and-icon">
                     <div className="name">{name}</div>
