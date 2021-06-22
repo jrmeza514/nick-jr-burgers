@@ -1,5 +1,5 @@
 import { Component } from "react";
-import menu, { DeluxeBurger, BasicBurger } from "../../Components/Menu/data/menuItems";
+import menu, { DeluxeBurger, BasicBurger } from "./data/menuItems";
 import './Menu.css';
 import {v4 as uuid} from 'uuid';
 

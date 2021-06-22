@@ -1,5 +1,5 @@
 import { Component } from "react";
-import menu, { MenuItem } from "../../Components/Menu/data/menuItems";
+import menu, { MenuItem } from "./data/menuItems";
 
 class MenuExtras extends Component {
 
